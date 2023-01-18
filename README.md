@@ -17,7 +17,4 @@ PS: Use ```pip freeze > requirements.txt``` when new packages are installed
 ```sh
 FLASK_APP=app.py FLASK_DEBUG=1 TEMPLATES_AUTO_RELOAD=1 flask run
 ```  
-or  
-```sh
-flask run
-```
+
