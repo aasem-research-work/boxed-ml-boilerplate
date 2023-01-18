@@ -84,5 +84,5 @@ def predict():
     path_file=tokens['filename']
     # todo: call function for prediction
     response_json=json.dumps( {'predicting':path_file})
-    os.unlink(path_file) if DELETE_AFTER_PREDICTION else None #delete token_dir on token expiry
+    #os.unlink(path_file) if DELETE_AFTER_PREDICTION else None #delete token_dir on token expiry
     return response_json
