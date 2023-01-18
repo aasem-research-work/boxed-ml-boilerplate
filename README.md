@@ -5,6 +5,9 @@ Deploy you machine learning tasks (train, predict, etc)
 ## create environment
 
 ```sh
+git clone https://github.com/aasem-research-work/boxed-ml-boilerplate.git
+chdir boxed-ml-boilerplate
+
 conda create -n boxedml python=3.9 --yes
 conda activate boxedml
 pip install -r requirements.txt
