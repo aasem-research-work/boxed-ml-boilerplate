@@ -9,6 +9,8 @@ from flask import Flask, flash, request, redirect, url_for
 from werkzeug.utils import secure_filename
 from flask import send_from_directory, jsonify
 
+from ml_module import ML_Module
+
 UPLOAD_FOLDER = './temp'
 ALLOWED_EXTENSIONS = { 'png', 'jpg', 'jpeg', 'gif'}
 DELETE_AFTER_PREDICTION=True
@@ -83,6 +85,10 @@ def test():
 def predict():
     path_file=tokens['filename']
     # todo: call function for prediction
-    response_json=json.dumps( {'predicting':path_file})
+    ml = ML_Module(p1=1,p2=2)
+    ml.load_model()
+    payload=ml.predict(ifile=path_file)
+    response_json=json.dumps( payload)
+    #response_json=json.dumps( {'predicting':path_file})
     #os.unlink(path_file) if DELETE_AFTER_PREDICTION else None #delete token_dir on token expiry
     return response_json
